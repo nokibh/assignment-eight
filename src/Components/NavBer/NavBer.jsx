@@ -28,7 +28,9 @@ const NavBer = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? 'text-[#23BE0A] border p-2 rounded' : 'font-bold'
+                  isActive
+                    ? 'text-[#23BE0A] border border-[#22be0a4e] p-2 rounded'
+                    : 'font-bold'
                 }
               >
                 Home
@@ -36,7 +38,9 @@ const NavBer = () => {
               <NavLink
                 to="/books"
                 className={({ isActive }) =>
-                  isActive ? 'text-[#23BE0A] border p-2 rounded' : 'font-bold'
+                  isActive
+                    ? 'text-[#23BE0A] border border-[#22be0a4e] p-2 rounded'
+                    : 'font-bold'
                 }
               >
                 Listed Books
@@ -44,7 +48,9 @@ const NavBer = () => {
               <NavLink
                 to="/pages"
                 className={({ isActive }) =>
-                  isActive ? 'text-[#23BE0A] border p-2 rounded' : 'font-bold'
+                  isActive
+                    ? 'text-[#23BE0A] border border-[#22be0a4e] p-2 rounded'
+                    : 'font-bold'
                 }
               >
                 Pages to Red
@@ -60,7 +66,9 @@ const NavBer = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive ? 'text-[#23BE0A] border p-2 rounded' : 'font-bold'
+                isActive
+                  ? 'text-[#23BE0A] border border-[#22be0a4e] p-2 rounded '
+                  : 'font-bold'
               }
             >
               Home
@@ -68,7 +76,9 @@ const NavBer = () => {
             <NavLink
               to="/books"
               className={({ isActive }) =>
-                isActive ? 'text-[#23BE0A] border p-2 rounded' : 'font-bold'
+                isActive
+                  ? 'text-[#23BE0A] border border-[#22be0a4e] p-2 rounded'
+                  : 'font-bold'
               }
             >
               Listed Books
@@ -76,7 +86,9 @@ const NavBer = () => {
             <NavLink
               to="/pages"
               className={({ isActive }) =>
-                isActive ? 'text-[#23BE0A] border p-2 rounded' : 'font-bold'
+                isActive
+                  ? 'text-[#23BE0A] border border-[#22be0a4e] p-2 rounded'
+                  : 'font-bold'
               }
             >
               Pages to Red
