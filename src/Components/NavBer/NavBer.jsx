@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 const NavBer = () => {
   return (
     <div>
@@ -25,28 +25,62 @@ const NavBer = () => {
               tabIndex={0}
               className="menu menu-sm items-center dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold gap-2 "
             >
-              <Link to="/">
-                <a>Home</a>
-              </Link>
-              <Link to="/books">Listed Books</Link>
-              <Link to="/pages">
-                <a>Pages to Read</a>
-              </Link>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? 'text-[#23BE0A] border p-2 rounded' : 'font-bold'
+                }
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/books"
+                className={({ isActive }) =>
+                  isActive ? 'text-[#23BE0A] border p-2 rounded' : 'font-bold'
+                }
+              >
+                Listed Books
+              </NavLink>
+              <NavLink
+                to="/pages"
+                className={({ isActive }) =>
+                  isActive ? 'text-[#23BE0A] border p-2 rounded' : 'font-bold'
+                }
+              >
+                Pages to Red
+              </NavLink>
             </ul>
           </div>
-          <a className="btn btn-ghost font-bold text-xl">Book Vibe</a>
+          <Link to="/" className="btn btn-ghost font-bold text-xl">
+            Book Vibe
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 items-center font-bold gap-2">
-            <Link to="/">
-              <a>Home</a>
-            </Link>
-            <Link to="/books">
-              <a>Listed Books</a>
-            </Link>
-            <Link to="/pages">
-              <a>Pages to Read</a>
-            </Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? 'text-[#23BE0A] border p-2 rounded' : 'font-bold'
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/books"
+              className={({ isActive }) =>
+                isActive ? 'text-[#23BE0A] border p-2 rounded' : 'font-bold'
+              }
+            >
+              Listed Books
+            </NavLink>
+            <NavLink
+              to="/pages"
+              className={({ isActive }) =>
+                isActive ? 'text-[#23BE0A] border p-2 rounded' : 'font-bold'
+              }
+            >
+              Pages to Red
+            </NavLink>
           </ul>
         </div>
         <div className="navbar-end gap-2">
