@@ -1,7 +1,9 @@
+import NavBer from '../NavBer/NavBer';
+
 const Home = () => {
   return (
     <div>
-      <h1>This is Home</h1>
+      <NavBer></NavBer>
     </div>
   );
 };
