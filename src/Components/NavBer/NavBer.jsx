@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 const NavBer = () => {
   return (
     <div>
@@ -55,14 +55,34 @@ const NavBer = () => {
               >
                 Pages to Red
               </NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-[#23BE0A] border border-[#22be0a4e] p-2 rounded'
+                    : 'font-bold'
+                }
+              >
+                About
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-[#23BE0A] border border-[#22be0a4e] p-2 rounded'
+                    : 'font-bold'
+                }
+              >
+                Contact
+              </NavLink>
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost font-bold text-xl">
+          <NavLink to="/" className="btn btn-ghost font-bold text-xl">
             Book Vibe
-          </Link>
+          </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 items-center font-bold gap-2">
+          <ul className="menu menu-horizontal px-1 items-center font-semiboldbold gap-4">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -92,6 +112,26 @@ const NavBer = () => {
               }
             >
               Pages to Red
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive
+                  ? 'text-[#23BE0A] border border-[#22be0a4e] p-2 rounded'
+                  : 'font-bold'
+              }
+            >
+              About
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive
+                  ? 'text-[#23BE0A] border border-[#22be0a4e] p-2 rounded'
+                  : 'font-bold'
+              }
+            >
+              Contact
             </NavLink>
           </ul>
         </div>
