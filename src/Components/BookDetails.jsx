@@ -7,7 +7,7 @@ const BookDetails = () => {
   const book = books.find(book => book.id === id);
   console.log(book);
   return (
-    <div className="mt-10 max-w-[1280px] mr-auto p-4">
+    <div className="mt-10 max-w-[1280px] h-52 mr-auto p-4">
       <div className="card bg-base-100 shadow-xl">
         <div className="flex justify-center items-center gap-x-20">
           <div>
@@ -28,7 +28,7 @@ const BookDetails = () => {
             </p>
 
             <div>
-              <div className="flex p-8">
+              <div className="flex p-5">
                 <p className=""> Tag: {book.tags} </p>
                 <p> {book.tags2} </p>
               </div>
@@ -61,7 +61,7 @@ const BookDetails = () => {
             </div>
             <div
               className="flex
- gap-10  pr-2"
+     gap-10  pr-2"
             >
               <div className="card-actions ">
                 <button className="btn btn-primary text-white">Read</button>
