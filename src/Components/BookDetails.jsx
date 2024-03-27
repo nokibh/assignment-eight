@@ -1,11 +1,17 @@
 import { useLoaderData, useParams } from 'react-router-dom';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveReadBook } from '../LocalStorage/LocalStorage';
 const BookDetails = () => {
   const books = useLoaderData();
   const { id } = useParams();
   // const idInt = parseInt(id);
   const book = books.find(book => book.id === id);
   console.log(book);
+  const handleRead = () => {
+    saveReadBook(id);
+    toast('Added success');
+  };
   return (
     <div className="mt-10 max-w-[1280px] h-52 mr-auto p-4">
       <div className="card bg-base-100 shadow-xl">
@@ -63,7 +69,7 @@ const BookDetails = () => {
               className="flex
      gap-10  pr-2"
             >
-              <div className="card-actions ">
+              <div onClick={handleRead} className="card-actions ">
                 <button className="btn btn-primary text-white">Read</button>
               </div>
 
@@ -76,6 +82,7 @@ const BookDetails = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
