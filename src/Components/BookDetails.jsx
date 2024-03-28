@@ -1,7 +1,11 @@
 import { useLoaderData, useParams } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { saveReadBook } from '../LocalStorage/LocalStorage';
+import {
+  saveToLocalStorage,
+  saveToLocalStorage2,
+} from '../LocalStorage/LocalStorage';
+
 const BookDetails = () => {
   const books = useLoaderData();
   const { id } = useParams();
@@ -9,20 +13,23 @@ const BookDetails = () => {
   const book = books.find(book => book.id === id);
   console.log(book);
   const handleRead = () => {
-    saveReadBook(id);
-    toast('Added success');
+    saveToLocalStorage(book);
+    // toast('Added success');
+  };
+  const handleWish = () => {
+    saveToLocalStorage2(book);
   };
   return (
-    <div className="mt-10 max-w-[1280px] h-52 mr-auto p-4">
+    <div className="mt-10  h-52 mr-auto p-4">
       <div className="card bg-base-100 shadow-xl">
-        <div className="flex justify-center items-center gap-x-20">
+        <div className="lg:flex justify-center items-center gap-x-20">
           <div>
             {' '}
             <figure>
               <img className="w-92 h-96" src={book.image} alt="Movie" />
             </figure>
           </div>
-
+          <ToastContainer></ToastContainer>
           <div className="card-body">
             <h2 className="card-title">{book.bookName}</h2>
             <p>By: {book.author} </p>
@@ -73,7 +80,7 @@ const BookDetails = () => {
                 <button className="btn btn-primary text-white">Read</button>
               </div>
 
-              <div className="card-actions">
+              <div onClick={handleWish} className="card-actions">
                 <button className="btn btn-primary text-white ">
                   Wishlist
                 </button>
@@ -82,7 +89,6 @@ const BookDetails = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };

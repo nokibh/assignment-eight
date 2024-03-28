@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
+// import { getStoredBook } from '../../LocalStorage/LocalStorage';
 
 const ListedBooks = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -34,30 +35,36 @@ const ListedBooks = () => {
           </ul>
         </div>
       </div>
-      <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hiddensm:justify-start flex-nowrap  text-gray-100 ml-4">
+      <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap  text-gray-100 ml-4">
+        <div>
+          <div>
+            <Link
+              to={`/books/read`}
+              onClick={() => setTabIndex(0)}
+              className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
+                tabIndex === 0 ? 'border border-b-0 ' : 'border-b'
+              }rounded-t-lg border-gray-400 text-black`}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-4 h-4"
+              >
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <span>Read</span>
+            </Link>
+          </div>
+          <Outlet></Outlet>
+        </div>
+
         <Link
-          // to=""
-          onClick={() => setTabIndex(0)}
-          className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
-            tabIndex === 0 ? 'border border-b-0 ' : 'border-b'
-          }rounded-t-lg border-gray-400 text-black`}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="w-4 h-4"
-          >
-            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-          </svg>
-          <span>Read</span>
-        </Link>
-        <Link
-          // to={`wishlist`}
+          to={`/books/wishlist`}
           onClick={() => setTabIndex(1)}
           className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
             tabIndex === 1 ? 'border border-b-0 ' : 'border-b'

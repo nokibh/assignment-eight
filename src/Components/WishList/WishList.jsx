@@ -1,5 +1,9 @@
 const WishList = () => {
-  return <div></div>;
+  return (
+    <div>
+      <h2 className="text-black">Hi wish</h2>
+    </div>
+  );
 };
 
 export default WishList;
